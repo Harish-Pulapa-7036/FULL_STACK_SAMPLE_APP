@@ -1,38 +1,99 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* App base */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
   min-height: 100vh;
+  color: #212529;
+
+
+}
+
+/* Generic layout container for pages */
+.page-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+}
+.centered-layout {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* Responsive typography */
+h1, h2, h3, h4 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Buttons */
+button {
+  background-color: #0066cc;
   color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #004b99;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Forms */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+  input[type="tel"]
+ {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem;
+  /* margin: 0.5rem 0; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Utility: center content vertically and horizontally */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Page-level responsiveness */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem 0.8rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"]
+   {
+    max-width: 100%;
   }
 }
